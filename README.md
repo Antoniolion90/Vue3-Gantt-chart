@@ -1,45 +1,33 @@
-<h1 align="center">vue-drag-gantt-chart</h1>
+<h1 align="center">Vue3-Gantt-chart</h1>
 
 ## 
 
-基于[Vue-Gantt-chart](https://github.com/w1301625107/Vue-Gantt-chart) 修改而来，改动如下：
+Based on [Vue3-Gantt-chart](https://github.com/w1301625107/Vue-Gantt-chart) the changes are as follows:
 
--  样式调整，添加顶部部的时间刻度格和左侧日期。滚动插件使用 [iscroll](https://github.com/cubiq/iscroll) 实现，使滚动条样式在各浏览器下保持一致，支持鼠标按住拖动，类似手机上的按住滚动效果。
+-  Style adjustment, adding time scale grid at the top and date on the left. The scrolling plug-in is implemented using [iscroll](https://github.com/cubiq/iscroll), which keeps the scroll bar style consistent across browsers and supports dragging with the mouse, similar to the scrolling effect on mobile phones.
 
--  数据分组：不同属性的甘特行可以分组，分组后数据渲染也是动态的，即只渲染浏览器视口内的数据，我本机测试万级数据(500行25列)轻微卡顿。
+-  Data grouping: Gantt rows with different attributes can be grouped. After grouping, the data rendering is also dynamic, that is, only the data in the browser viewport is rendered. I tested 10,000-level data (500 rows and 25 columns) on this machine and it was slightly laggy.
 
--  数据搜索：搜索后高亮显示结果，并滚动到相应任务位置，若搜索到多个结果，继续点搜索按钮跳转到下一个结果。
+-  Data search: After searching, highlight the results and scroll to the corresponding task location. If multiple results are found, continue to click the search button to jump to the next result.
 
--  甘特块拖拽调整：基于浏览器原生拖拽事件实现，不同行之间的甘特块可以拖拽调整，调整时可以做一些校验，代码里暂时只做了时间校验，拖拽后默认会有一个黑色阴影块显示原来的任务，在配置项里可以设置为不显示，调整确认弹窗也可以选择显示或不显示(默认不显示)。
+-  Gantt block drag and drop adjustment: implemented based on the browser's native drag and drop event. Gantt blocks between different rows can be dragged and adjusted. Some verification can be done during adjustment. The code only performs time verification for the time being. After dragging, By default, there will be a black shadow block showing the original task. It can be set not to be displayed in the configuration item. You can also choose to display or not display the adjustment confirmation pop-up window (not displayed by default).
 
--  右键菜单：若想要调整的行竖向间距过大不方便拖拽时，可使用右键菜单调整任务，可以选择复制或交换。
+-  Right-click menu: If the vertical spacing of the rows you want to adjust is too large to be convenient for dragging, you can use the right-click menu to adjust the task, and you can choose to copy or swap.
 
 
-### demo: [在线演示](https://liyang5945.github.io/vue-drag-gantt-chart)
+### demo: [Online demo](https://liyang5945.github.io/vue-drag-gantt-chart)
 
-### 动图演示
-拖拽移动
+### Animation demonstration
+Drag and move
 
 ![](screenshot/vue_drag_gantt_1.gif)
 
-数据分组
-
-![](screenshot/vue_drag_gantt_2.gif)
-
-搜索
+Search
 
 ![](screenshot/vue_drag_gantt_3.gif)
 
-拖拽调整任务
 
-![](screenshot/vue_drag_gantt_4.gif)
-
-右键菜单调整任务
-
-![](screenshot/vue_drag_gantt_5.gif)
-
-
-数据格式，每一行的数据如下，rawIndex这个字段是每一行的原始顺序，用来确定垂直方向的位置(计算绝对定位的top值)，gtArray里面是每一个小块的数据。
+Data format, the data of each row is as follows. The rawIndex field is the original order of each row, which is used to determine the vertical position (calculate the top value of absolute positioning). The gtArray contains the data of each small block.
 
 ```json
 
