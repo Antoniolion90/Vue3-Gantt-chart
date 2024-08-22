@@ -31,7 +31,7 @@
             <span>S:{{ startToString }}</span>
             <span>E:{{ endToString }}</span>
           </div>
-          <div class="middle">сер.№{{ blockData.id }}</div>
+          <div class="middle">{{ blockData.id }}</div>
           <div class="passenger">{{ blockData.passenger }}чел.</div>
         </div>
       </template>
@@ -45,10 +45,10 @@
               <span>Время прибытия：</span><span>{{ endToString }}</span>
             </li>
             <li>
-              <span>пассажир：</span><span>{{ blockData.passenger }}</span>
+              <span>Пассажир：</span><span>{{ blockData.passenger }}</span>
             </li>
             <li>
-              <span>серийный номер：</span><span>{{ blockData.id }}</span>
+              <span>Серийный номер：</span><span>{{ blockData.id }}</span>
             </li>
           </ul>
         </div>
@@ -260,7 +260,6 @@ export default {
   li {
     span {
       display: inline-block;
-      width: 80px;
       color: #777777;
       font-size: 0.8rem;
     }
